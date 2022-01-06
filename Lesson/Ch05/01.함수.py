@@ -40,11 +40,11 @@ print('r3 : ', r3)
 
 # 유형 2 - 매개변수 O, 리턴값 X
 def type2(dataset):
-tot = int0
-    for data in dataset:
+ tot = 0
+ for data in dataset:
         tot += data
 
-print('dataset sum :', tot)
+ print('dataset sum :', tot)
 
 
 

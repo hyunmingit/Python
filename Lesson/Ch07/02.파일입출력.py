@@ -31,10 +31,10 @@ f2.close()
 f3 = open('./multiple.txt', mode='w', encoding='utf-8')
 
 
-for a in  range(2,10):
+for a in range(2,10):
     f3.write('%d단\n' % a)
     print(f' {a}단')
-    for b in  range(1,10):
+    for b in range(1,10):
          f3.write(f'{a} x {b} = {a * b}\n')
 
 
