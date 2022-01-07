@@ -8,3 +8,10 @@ print(type(lst))
 
 for i in lst :
     print(lst[:i])
+
+
+
+
+int(a) = 10
+    print(a)
+
