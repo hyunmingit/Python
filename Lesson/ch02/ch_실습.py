@@ -18,6 +18,7 @@ var2 = 150.25
 print(var2)
 print( id(var2) )
 
+
 #예약어 확인
 
 import  keyword #모듈 임포트
