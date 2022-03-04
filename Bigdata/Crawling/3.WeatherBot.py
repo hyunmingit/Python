@@ -5,26 +5,31 @@
 """
 import os.path
 
-import  requests as req
-from bs4 import  BeautifulSoup as bs
-from datetime import  datetime
+import requests as req
+from bs4 import BeautifulSoup as bs
+from datetime import datetime
 
 # 페이지 요청
 html = req.get('https://www.weather.go.kr/w/obs-climate/land/city-obs.do').text
-print(html)
-#문서 객체 생성
+#print(html)
+
+# 문서객체 생성
 dom = bs(html, 'html.parser')
-print(dom)
-# 데이터 파싱
+#print(dom)
+
+# 파일 디렉터리 생성
 dir = "/home/crawler/weather/{:%Y-%m%d}".format(datetime.now())
+
 if not os.path.exists(dir):
     os.makedirs(dir)
-fname = "{:%Y-%m-%d-%H-%M.CSV}".format(datetime.now())
+
+# 파일 생성 및 데이터 파싱
+fname = "{:%Y-%m-%d-%H-%M.csv}".format(datetime.now())
 file = open(dir+'/'+fname, 'w', encoding='utf-8')
 
+
+file.write('이름, 현재 일기, 시정(km), 운량 1/10, 중하운량, 현재기온, 이슬점온도, 체감온도, 일강수mm, 적설cm, 습도%, 풍향, 풍속 m/s, 해면기압\n')
 trs = dom.select('#weather_table > tbody > tr')
-
-
 for tr in trs:
     t1 = tr.findChildren('td')[0].a.text
     t2 = tr.findChildren('td')[1].text
@@ -40,8 +45,8 @@ for tr in trs:
     t12 = tr.findChildren('td')[11].text
     t13 = tr.findChildren('td')[12].text
     t14 = tr.findChildren('td')[13].text
-    print('{},{},{},{},{},{},{},{},{},{},{},{},{},{}'.format(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14 ))
-# 데이터 파일 저장
-file.close()
-print('데이터수집완료')
 
+    file.write('{},{},{},{},{},{},{},{},{},{},{},{},{},{}\n'.format(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14))
+
+file.close()
+print('데이터 수집 완료...')
