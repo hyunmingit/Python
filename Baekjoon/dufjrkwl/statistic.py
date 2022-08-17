@@ -1,4 +1,7 @@
 """https://www.acmicpc.net/problem/2108"""
+import sys
+def input(): return sys.stdin.readline().rstrip()
+
 
 N = int(input())
 nums = []
@@ -16,7 +19,7 @@ elif len(nums) == len(set(nums)):  # 중복이 없으면 두 번째로 큰 수 �
 else:
     x = {}  # 숫자와 빈도수 딕셔너리
     for value in nums:  # 딕셔너리에 빈도수와 함께 저장
-        try:            #key가 존재 한다면 += 1 하고 존재하지 않아 오류가 발생하면 1 부여
+        try:  # key가 존재 한다면 += 1 하고 존재하지 않아 오류가 발생하면 1 부여
             x[value] += 1
         except Exception:
             x[value] = 1
@@ -31,5 +34,3 @@ else:
     else:  # 처음 숫자의 빈도가 더 크므로 첫번째 숫자 출력
         print(res1)
 print(nums[-1] - nums[0])  # 범위
-
-
