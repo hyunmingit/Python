@@ -17,8 +17,7 @@ ttt['hi'] = 'hello'
 
 
 print(ttt)
+str1 = 'f'
+str2 = 'h'
 
-aa = map(int, input().split())
-for i in aa:
-    print(i)
-
+print(str1 + str2)
