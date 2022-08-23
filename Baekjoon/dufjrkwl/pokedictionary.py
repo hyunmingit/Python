@@ -1,7 +1,6 @@
 """https://www.acmicpc.net/problem/1620"""
 
 import sys
-
 def input(): return sys.stdin.readline().rstrip()
 
 

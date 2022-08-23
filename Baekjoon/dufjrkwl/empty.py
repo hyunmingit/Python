@@ -14,7 +14,11 @@ print(type(c) ==str)
 ttt = {}
 
 ttt['hi'] = 'hello'
-ip = input()
-print('type', type(ip) == str)
-print(ttt[ip])
+
+
+print(ttt)
+
+aa = map(int, input().split())
+for i in aa:
+    print(i)
 
