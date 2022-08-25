@@ -18,10 +18,14 @@ sr = 0
 br = 0
 
 order = []
-
+ll = []
 for i in range(6):
     ip, ip2 = map(int, input().split())
-    count[ip] += 1
+    ll.append(ip2)
+    try:
+        count[ip] += 1
+    except:
+        count[ip] = 1
     order.append(ip)
     if ip == 1 or ip == 2:
         if ip2 > wid:
@@ -33,6 +37,9 @@ for i in range(6):
     b2 = ip2
 
 sorder = set(order)
-
+print('order : ', order)
+print('count : ', count)
+print('length : ', ll)
 br = wid * hei
 print(N * (br - sr))
+
