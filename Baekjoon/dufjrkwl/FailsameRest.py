@@ -8,6 +8,7 @@ def input(): return sys.stdin.readline().rstrip()
 
 N = int(input())
 
+
 """
 Nli = []
 
@@ -22,12 +23,14 @@ while M < Nli[0]:
     for k in range(1, len(Nli)):
         if Nli[k] % M == Nli[k-1] % M:
             if k == len(Nli)-1:
-                print(M)
+                print(M, end=' ')
             pass
         else:
             break
     M += 1
+
 """
+
 
 Ndic = {}
 
@@ -36,6 +39,26 @@ for i in range(N):
 
 M = min(Ndic)
 N = 2
+
+while N < min(Ndic):
+    chk = min(Ndic) % N
+    for num in Ndic:
+        if num % N == chk:
+            Ndic[num] = N
+        else:
+            break
+        chk = num % N
+
+    if Ndic[max(Ndic)] == Ndic[min(Ndic)]:
+        print(Ndic[max(Ndic)], end=' ')
+    N += 1
+
+
+
+
+
+
+
 
 
 
