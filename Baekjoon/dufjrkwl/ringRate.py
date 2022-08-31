@@ -26,3 +26,5 @@ for i in range(1,N):
     print(str(int(R / fli[i])) + '/' + str(int(rli[i] / fli[i])))
 
 
+
+
