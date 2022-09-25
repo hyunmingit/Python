@@ -15,7 +15,6 @@ now = cost[0]
 meca = 0
 reason = min(cost)
 for i in range(N-1):
-
     if cost[i] == reason:
         oil = cost[i]
         meca = i

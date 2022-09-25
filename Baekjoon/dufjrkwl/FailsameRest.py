@@ -1,73 +1,27 @@
 """https://www.acmicpc.net/problem/2981"""
-
 import sys
 
 
 def input(): return sys.stdin.readline().rstrip()
 
 
-N = int(input())
-
-
-"""
-Nli = []
-
-for i in range(N):
-    Nli.append(int(input()))
-
-Nli = sorted(Nli)
-M = 2
-chk = 1
-while M < Nli[0]:
-    chk = Nli[0] % M
-    for k in range(1, len(Nli)):
-        if Nli[k] % M == Nli[k-1] % M:
-            if k == len(Nli)-1:
-                print(M, end=' ')
-            pass
-        else:
-            break
-    M += 1
-
-"""
-
-
+T = int(input())
+res = []
 Ndic = {}
-
-for i in range(N):
+for j in range(T):
     Ndic[int(input())] = 0
-
 M = min(Ndic)
-N = 2
-
-while N < min(Ndic):
-    chk = min(Ndic) % N
+for i in range(min(Ndic)):
+    chk = min(Ndic) % (i+2)
     for num in Ndic:
-        if num % N == chk:
-            Ndic[num] = N
+        if num % (i+2) == chk:
+            Ndic[num] = (i+2)
+            chk = num % (i+2)
         else:
             break
-        chk = num % N
-
     if Ndic[max(Ndic)] == Ndic[min(Ndic)]:
-        print(Ndic[max(Ndic)], end=' ')
-    N += 1
+        res.append(Ndic[min(Ndic)])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+res = sorted(set(res))
+for nu in res:
+    print(nu, end=' ')

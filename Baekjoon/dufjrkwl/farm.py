@@ -6,9 +6,7 @@ def input() : return sys.stdin.readline().rstrip()
 
 wid = 0
 hei = 0
-
 count = {}
-
 N = int(input())
 x1 = 0
 x2 = 0
@@ -16,7 +14,6 @@ y1 = 0
 y2 = 0
 sr = 0
 br = 0
-
 order = []
 ll = []
 for i in range(6):
