@@ -5,6 +5,7 @@ import sys
 def input(): return sys.stdin.readline().rstrip()
 
 
+"""
 T = int(input())
 res = []
 Ndic = {}
@@ -25,3 +26,5 @@ for i in range(min(Ndic)):
 res = sorted(set(res))
 for nu in res:
     print(nu, end=' ')
+"""
+

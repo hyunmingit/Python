@@ -10,20 +10,21 @@ N, M = map(int, input().split())
 
 numli = list(range(1, N+1))
 
-tli = []
-for i in range(M):
-    tli.append(10**M)
-
 res = []
 
-for j in range(1,N+1):
-    lili = []
-    for k in range(1,M+1):
+tli = []
 
-        lili.append(k)
-    res.append(lili)
+for i in range(M):
+    for num in numli:
+        tli.append(num * 10 ** i)
 
-print(res)
+print(tli)
+chk = list(range(M))
+for j in range(N):
+    mn = 0
+    mn += tli[j]
+
+
 
 
 
